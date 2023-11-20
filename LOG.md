@@ -9,3 +9,6 @@
 * [Apache Tika](https://tika.apache.org/)
 * [Apache Tika Content Detection](https://tika.apache.org/2.9.1/detection.html)
 * [Apache Tika Supported Document Formats](https://tika.apache.org/2.9.1/formats.html)
+
+### 2023/11/20
+oracle存储ipv4/ipv6地址并没有找到什么心仪的方法，老老实实VARCHAR2
