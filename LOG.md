@@ -15,3 +15,6 @@ oracle存储ipv4/ipv6地址并没有找到什么心仪的方法，老老实实VA
 
 ### 2023/11/25
 map+函数式方法处理if else的情况, 可以自己用,但最好不要带入工作中.意义不是很大
+
+### 2023/11/30
+关于日志问题,ELK 或者 Loki(like Prometheus, but for logs) 空了看一下Prometheus吧

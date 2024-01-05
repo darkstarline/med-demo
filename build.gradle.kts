@@ -24,6 +24,7 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
@@ -35,6 +36,11 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.tika/tika-parsers-standard-package
     implementation("org.apache.tika:tika-parsers-standard-package:2.9.0")
 
+    implementation("io.prometheus:prometheus-metrics-core:1.0.0")
+    implementation("io.prometheus:prometheus-metrics-instrumentation-jvm:1.0.0")
+    implementation("io.prometheus:prometheus-metrics-exporter-httpserver:1.0.0")
+    implementation("io.prometheus:prometheus-metrics-exporter-servlet-jakarta:1.0.0")
+    implementation("io.prometheus:prometheus-metrics-exporter-opentelemetry:1.0.0")
 }
 
 tasks.withType<Test> {
