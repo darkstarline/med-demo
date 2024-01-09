@@ -1,0 +1,224 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/api/swaggerTest/{id}": {
+      "get": {
+        "tags": [
+          "swagger-test-controller"
+        ],
+        "summary": "Get  by its id",
+        "operationId": "findById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id of * to be searched",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid id supplied",
+            "content": {}
+          },
+          "404": {
+            "description": "Not found",
+            "content": {}
+          },
+          "200": {
+            "description": "Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SwaggerTest"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "swagger-test-controller"
+        ],
+        "operationId": "updateBook",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SwaggerTest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SwaggerTest"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/swaggerTest/": {
+      "get": {
+        "tags": [
+          "swagger-test-controller"
+        ],
+        "operationId": "findBooks",
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SwaggerTest"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "demo-controller"
+        ],
+        "operationId": "sayHello",
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SwaggerTest": {
+        "required": [
+          "author",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "title": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string"
+          },
+          "author": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

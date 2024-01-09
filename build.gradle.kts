@@ -41,6 +41,10 @@ dependencies {
     implementation("io.prometheus:prometheus-metrics-exporter-httpserver:1.0.0")
     implementation("io.prometheus:prometheus-metrics-exporter-servlet-jakarta:1.0.0")
     implementation("io.prometheus:prometheus-metrics-exporter-opentelemetry:1.0.0")
+
+    // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
+
 }
 
 tasks.withType<Test> {
